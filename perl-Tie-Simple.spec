@@ -1,10 +1,10 @@
 %define modname	Tie-Simple
-%define modver	1.03
+%define modver	1.04
 
 Summary:	Create ties without creating full packages
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	15
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -28,17 +28,17 @@ bits of Perl where I can to minimize the need for documentation and to make
 this extra, extra spiffy.
 
 %prep
-%setup -qn %{modname}-%{modver}
+%autosetup -n %{modname}-%{modver} -p1
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
-%make
+%__perl Makefile.PL INSTALLDIRS=vendor OPTIMIZE="%{optflags}"
+%make_build
 
 %check
 %make test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc META.yml Changes README
