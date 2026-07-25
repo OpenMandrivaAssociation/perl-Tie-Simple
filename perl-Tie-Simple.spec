@@ -3,12 +3,12 @@
 
 Summary:	Create ties without creating full packages
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	2
+Version:	%{modver}
+Release:	3
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/Tie/%{modname}-%{modver}.tar.gz
+Url:		https://github.com/zostay/Tie-Simple
+Source0:	https://cpan.metacpan.org/authors/id/H/HA/HANENKAMP/Tie-Simple-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	make
 BuildRequires:	perl(Test::More)
